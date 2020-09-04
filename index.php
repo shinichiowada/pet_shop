@@ -43,7 +43,7 @@ if ($_GET === "") {
     $stmt = $dbh->prepare($sql);
 
     // プリペアドステートメントの実行
-    $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
+    $stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
     $stmt->execute();
 
     // 結果の受け取り
